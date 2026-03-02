@@ -28,6 +28,7 @@ string toUpperStr(string x)
     return y;
 }
 
+<<<<<<< HEAD
 void importDataFromFile()
 {
 }
@@ -41,6 +42,31 @@ void searchName()
 }
 
 void searchGrade()
+=======
+void importDataFromFile(string filename, vector<string> names, vector<int> scores, vector<char> grades)
+{
+    ifstream read(filename);
+    string textline;
+    getline(read, textline);
+
+    char format[] = "%[^:]:%f,%f,%f";
+
+    sscanf(textline, format, names, scores, grades);
+
+    read.close();
+}
+
+void getCommand(string command, string key)
+{
+}
+
+void searchName(vector<string> names, vector<int> scores, vector<char> grades, string key)
+
+{
+}
+
+void searchGrade(vector<string> names, vector<int> scores, vector<char> grades, string key)
+>>>>>>> c7147c7d9a3d51b099b44188863246499b9fc49e
 {
 }
 
