@@ -1,63 +1,76 @@
-#include<iostream>
-#include<fstream>
-#include<vector>
-#include<string>
-#include<cstdlib>
+#include <iostream>
+#include <fstream>
+#include <vector>
+#include <string>
+#include <cstdlib>
 
 using namespace std;
 
-char score2grade(int score){
-    if(score >= 80) return 'A';
-    if(score >= 70) return 'B';
-    if(score >= 60) return 'C';
-    if(score >= 50) return 'D';
-    else return 'F';
+char score2grade(int score)
+{
+    if (score >= 80)
+        return 'A';
+    if (score >= 70)
+        return 'B';
+    if (score >= 60)
+        return 'C';
+    if (score >= 50)
+        return 'D';
+    else
+        return 'F';
 }
 
-string toUpperStr(string x){
+string toUpperStr(string x)
+{
     string y = x;
-    for(unsigned i = 0; i < x.size();i++) y[i] = toupper(x[i]);
+    for (unsigned i = 0; i < x.size(); i++)
+        y[i] = toupper(x[i]);
     return y;
 }
 
-void importDataFromFile(){
-
+void importDataFromFile()
+{
 }
 
-void getCommand(){
-
+void getCommand()
+{
 }
 
-void searchName(){
-
+void searchName()
+{
 }
 
-void searchGrade(){
-
+void searchGrade()
+{
 }
 
-
-int main(){
+int main()
+{
     string filename = "name_score.txt";
     vector<string> names;
     vector<int> scores;
-    vector<char> grades; 
+    vector<char> grades;
     importDataFromFile(filename, names, scores, grades);
-    
-    do{
+
+    do
+    {
         string command, key;
-        getCommand(command,key);
+        getCommand(command, key);
         command = toUpperStr(command);
         key = toUpperStr(key);
-        if(command == "EXIT") break;
-        else if(command == "GRADE") searchGrade(names, scores, grades, key);
-        else if(command == "NAME") searchName(names, scores, grades, key);
-        else{
+        if (command == "EXIT")
+            break;
+        else if (command == "GRADE")
+            searchGrade(names, scores, grades, key);
+        else if (command == "NAME")
+            searchName(names, scores, grades, key);
+        else
+        {
             cout << "---------------------------------\n";
             cout << "Invalid command.\n";
             cout << "---------------------------------\n";
         }
-    }while(true);
-    
+    } while (true);
+
     return 0;
 }
